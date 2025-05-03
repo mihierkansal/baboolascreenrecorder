@@ -1,0 +1,95 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  height: 100vh;
+  background: radial-gradient(circle at center, #444 2px, black 2px, black);
+  box-shadow: inset 0 0 300px black;
+  background-size: 8px 8px;
+}
+
+#audio-recorder {
+  height: 7rem;
+  padding-inline: 2rem;
+  background: linear-gradient(to bottom, white, grey);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 2rem;
+  box-shadow: inset 0 -20px 20px #0007, inset 0 5px 10px white,
+    0 10px 20px #0009;
+  display: flex;
+  align-items: center;
+  padding: 1.5rem;
+}
+
+#audio-recorder-display {
+  font-family: "Scientific Calculator LCD";
+  height: 3rem;
+  padding-top: 0.2rem;
+  width: 10rem;
+  background: #440000;
+  color: red;
+  display: flex;
+  align-items: center;
+  padding-inline: 0.5rem;
+  position: relative;
+  font-size: 0.75rem;
+  text-shadow: 0 0 7px red;
+  border-inline: 19px solid black;
+  border-block: 5px solid black;
+  border-radius: 0.25rem;
+  box-shadow: 0 3px 2px 1px white, 0 -5px 3px 2px #0004;
+}
+
+.buttons {
+  display: flex;
+  margin-left: 1rem;
+}
+.metalbtn {
+  font-family: "Arial";
+  font-size: 2rem;
+  padding-bottom: 2px;
+  height: calc(2rem + 2px);
+  width: 3rem;
+  height: 3rem;
+  line-height: 0;
+  display: grid;
+  place-items: center;
+  position: relative;
+  border-radius: 999rem;
+  border: none;
+  cursor: pointer;
+  background: conic-gradient(lightgrey, grey, lightgrey, grey, lightgrey);
+  box-shadow: inset 0 -2px 1px #0006, 0 0 0 1px #666, 0 1px 0 1px #fff8;
+
+  &:active,
+  &.active {
+    padding-top: 4px;
+    box-shadow: inset 0 2px 1px #0006, 0 0 0 1px #666, 0 1px 0 1px #fff8;
+    background-position: 0 2px;
+  }
+}
+
+#record {
+  &::after {
+    transition: background 0.5s;
+    content: "";
+    height: 1rem;
+    width: 1rem;
+    background: grey;
+    border-radius: 999rem;
+    box-shadow: inset 0 0 1px black, inset 0 1px 3px #0008,
+      inset 0 -1px 2px white;
+  }
+  &:active,
+  &.active {
+    &::after {
+      background: red;
+      filter: drop-shadow(0 0 4px #f005);
+    }
+  }
+}
