@@ -53,9 +53,7 @@ function App() {
   return (
     <>
       <div id="audio-recorder">
-        <div id="audio-recorder-display">
-          {isRecording[0]() ? "Recording" : "--"}
-        </div>
+        <div id="audio-recorder-display">{isRecording[0]() ? "REC" : "--"}</div>
 
         <div class="buttons">
           <button
